@@ -14,6 +14,7 @@ public struct TooltipViewAttributes {
     let fontColor: UIColor
     let kern: CGFloat
     let lineHeight : CGFloat
+    let lineSpacing: CGFloat
     let alignment: NSTextAlignment
     
     public init(
@@ -23,6 +24,7 @@ public struct TooltipViewAttributes {
         fontColor: UIColor,
         kern: CGFloat,
         lineHeight: CGFloat,
+        lineSpacing: CGFloat,
         alignment: NSTextAlignment
     ) {
         self.backgroundColor = backgroundColor
@@ -31,6 +33,7 @@ public struct TooltipViewAttributes {
         self.fontColor = fontColor
         self.kern = kern
         self.lineHeight = lineHeight
+        self.lineSpacing = lineSpacing
         self.alignment = alignment
     }
 }
