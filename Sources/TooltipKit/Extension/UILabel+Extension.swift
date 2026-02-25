@@ -22,6 +22,7 @@ extension UILabel {
         let style = NSMutableParagraphStyle()
         style.alignment = attributes.alignment
         style.minimumLineHeight = attributes.lineHeight
+        style.lineSpacing = attributes.lineSpacing
         
         attributedString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: .zero, length: attributedString.length))
         
