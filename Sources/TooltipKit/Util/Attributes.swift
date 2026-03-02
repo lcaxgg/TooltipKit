@@ -13,7 +13,8 @@ public struct TooltipViewAttributes {
     let font: UIFont
     let fontColor: UIColor
     let kern: CGFloat
-    let lineHeight : CGFloat
+    let minimumLineHeight: CGFloat
+    let maximumLineHeight: CGFloat
     let lineSpacing: CGFloat
     let alignment: NSTextAlignment
     
@@ -23,7 +24,8 @@ public struct TooltipViewAttributes {
         font: UIFont,
         fontColor: UIColor,
         kern: CGFloat,
-        lineHeight: CGFloat,
+        minimumLineHeight: CGFloat? = nil,
+        maximumLineHeight: CGFloat? = nil,
         lineSpacing: CGFloat,
         alignment: NSTextAlignment
     ) {
@@ -32,7 +34,8 @@ public struct TooltipViewAttributes {
         self.font = font
         self.fontColor = fontColor
         self.kern = kern
-        self.lineHeight = lineHeight
+        self.minimumLineHeight = minimumLineHeight ?? font.pointSize
+        self.maximumLineHeight = maximumLineHeight ?? font.pointSize
         self.lineSpacing = lineSpacing
         self.alignment = alignment
     }
