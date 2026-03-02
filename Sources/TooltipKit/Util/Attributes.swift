@@ -15,7 +15,6 @@ public struct TooltipViewAttributes {
     let kern: CGFloat
     let minimumLineHeight: CGFloat
     let maximumLineHeight: CGFloat
-    let lineSpacing: CGFloat
     let alignment: NSTextAlignment
     
     public init(
@@ -26,7 +25,6 @@ public struct TooltipViewAttributes {
         kern: CGFloat,
         minimumLineHeight: CGFloat? = nil,
         maximumLineHeight: CGFloat? = nil,
-        lineSpacing: CGFloat,
         alignment: NSTextAlignment
     ) {
         self.backgroundColor = backgroundColor
@@ -36,7 +34,6 @@ public struct TooltipViewAttributes {
         self.kern = kern
         self.minimumLineHeight = minimumLineHeight ?? font.pointSize
         self.maximumLineHeight = maximumLineHeight ?? font.pointSize
-        self.lineSpacing = lineSpacing
         self.alignment = alignment
     }
 }
