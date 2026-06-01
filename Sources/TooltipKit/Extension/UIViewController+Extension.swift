@@ -9,9 +9,9 @@ import UIKit
 
 extension UIViewController {
     public func showTooltip(with attributes: PopoverAttributes) {
-        view.add(subView: attributes.tipView)
         preferredContentSize = attributes.viewSize
         modalPresentationStyle = .popover
+        attributes.tipViewVC.view = attributes.tipView
         
         if let presentationController = presentationController as? UIPopoverPresentationController {
             presentationController.backgroundColor = .clear
@@ -21,7 +21,6 @@ extension UIViewController {
                                                        width: .zero,
                                                        height: .zero)
             presentationController.permittedArrowDirections = attributes.arrowDirection
-            view.backgroundColor = attributes.tipView.backgroundColor
             
             presentationController.delegate = attributes.tipViewVC
             attributes.superViewVC.present(attributes.tipViewVC, animated: true, completion: nil)
