@@ -9,6 +9,7 @@ import UIKit
 
 public struct TooltipViewAttributes {
     let backgroundColor: UIColor
+    let cornerRadius: CGFloat
     let text: String
     let font: UIFont
     let fontColor: UIColor
@@ -19,6 +20,7 @@ public struct TooltipViewAttributes {
     
     public init(
         backgroundColor: UIColor,
+        cornerRadius: CGFloat = 7.0,
         text: String,
         font: UIFont,
         fontColor: UIColor,
@@ -28,6 +30,7 @@ public struct TooltipViewAttributes {
         alignment: NSTextAlignment
     ) {
         self.backgroundColor = backgroundColor
+        self.cornerRadius = cornerRadius
         self.text = text
         self.font = font
         self.fontColor = fontColor
