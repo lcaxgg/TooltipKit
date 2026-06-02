@@ -63,12 +63,13 @@ extension TooltipView {
         NSLayoutConstraint.activate([
             arrowView.topAnchor.constraint(equalTo: topAnchor),
             arrowView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            arrowView.widthAnchor.constraint(equalToConstant: 100.0),
+            arrowView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 7.0),
+            arrowView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -7.0),
             arrowView.heightAnchor.constraint(equalToConstant: 13.0),
             containerView.topAnchor.constraint(equalTo: arrowView.bottomAnchor),
             containerView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 3.5),
-            containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -3.5),
+            containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5.0),
+            containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5.0),
             label.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 5.0),
             label.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 15.0),
             label.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -15.0)
