@@ -34,11 +34,9 @@ extension TooltipView {
         addSubview(label)
         
         NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: centerYAnchor),
-
-            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
-            label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15)
+            label.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -5.0),
+            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15.0),
+            label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15.0)
         ])
     }
 }
