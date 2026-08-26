@@ -9,7 +9,9 @@ import UIKit
 
 public class TooltipView: UIView {
     public var attributes: TooltipViewAttributes!
-    
+
+    private var labelCenterYConstraint: NSLayoutConstraint?
+
     var label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -33,8 +35,15 @@ extension TooltipView {
     private func setupView() {
         addSubview(label)
         
+        let centerYConstraint = label.centerYAnchor.constraint(
+            equalTo: centerYAnchor,
+            constant: 0.0
+        )
+
+        labelCenterYConstraint = centerYConstraint
+        
         NSLayoutConstraint.activate([
-            label.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -5.0),
+            centerYConstraint,
             label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15.0),
             label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15.0)
         ])
@@ -45,5 +54,9 @@ extension TooltipView {
     public func bind(_ attributes: TooltipViewAttributes) {
         backgroundColor = attributes.backgroundColor
         label.configure(with: attributes)
+    }
+    
+    public func configureCenterYConstraint(offset: CGFloat) {
+        labelCenterYConstraint?.constant = offset
     }
 }
